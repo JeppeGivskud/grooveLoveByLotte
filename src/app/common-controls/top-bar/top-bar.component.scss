@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  background-color: #e3a7fd;
+  height: 40px;
+  width: 100%;
+}
+.instaFace {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; // Adjust as needed to align the images
+  align-items: center; // Keeps the images vertically centered
+  width: 80px; // This sets the container width, consider adjusting if having more than one image
+  height: 40px; // This sets the container height
+}

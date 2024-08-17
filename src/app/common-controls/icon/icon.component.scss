@@ -1,0 +1,12 @@
+div {
+  display: flex; // This will make the div a flex container
+  justify-content: center; // This will center the content horizontally
+  align-items: center; // This will center the content vertically
+  width: 40px; // Set div width to 40px
+  height: 40px; // Set div height to 40px
+}
+img {
+  width: 20px; // Set image width to 40px
+  height: 20px; // Set image height to 40px
+  object-fit: cover; // This will ensure the image covers the area without distorting aspect ratio
+}
