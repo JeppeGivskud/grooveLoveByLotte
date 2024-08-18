@@ -1,42 +1,53 @@
 import { Component } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
-import { Router } from '@angular/router';
+import {
+  Router, // Keep Router as we will use it
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 import { CommonModule } from '@angular/common';
+
 interface Route {
   key: string;
-  selected: boolean;
+  route: string;
 }
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [IconComponent, CommonModule],
+  imports: [
+    IconComponent,
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+  ],
   templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.scss',
+  styleUrls: ['./top-bar.component.scss'], // Corrected property name from styleUrl to styleUrls
 })
 export class TopBarComponent {
+  selected = '';
+
+  routes: Route[] = [
+    { key: 'Forside', route: '' },
+    { key: 'Events', route: 'Events' },
+    { key: 'Galleri', route: 'Galleri' },
+    { key: 'Hold', route: 'Hold' },
+    { key: 'Hvem er jeg?', route: 'Hvemerjeg' },
+    { key: 'Kontakt', route: 'Kontakt' },
+  ];
+
+  constructor(private router: Router) {} // Injecting the Router service
+
   goTo(url: string) {
     console.log('Go to: ', url);
     window.open(url);
   }
-  constructor(private router: Router) {}
-  selected = 'Forside';
 
-  routes: Route[] = [
-    { key: 'Forside', selected: false },
-    { key: 'Events', selected: false },
-    { key: 'Galleri', selected: true },
-    { key: 'Hold', selected: false },
-    { key: 'Hvem er jeg', selected: false },
-    { key: 'Kontakt', selected: false },
-  ];
   pressRouterLink(route: string) {
-    this.router.navigate([route]);
     console.log('Press route: ', route);
-    const index = this.routes.findIndex((r) => r.key === route);
-    if (index !== -1) {
-      this.routes[index].selected = !this.routes[index].selected;
-      this.selected = route;
-    }
+    this.selected = route;
+    this.router.navigate([route]); // Use the Router service to navigate
   }
 }

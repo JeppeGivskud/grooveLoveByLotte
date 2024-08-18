@@ -8,10 +8,10 @@ import { KontaktComponent } from './kontakt/kontakt.component';
 
 export const routes: Routes = [
   { path: '', component: ForsideComponent },
-  { path: 'events', component: EventsComponent },
-  { path: 'forside', component: ForsideComponent },
-  { path: 'galleri', component: GalleriComponent },
-  { path: 'hold', component: HoldComponent },
-  { path: 'hvemerjeg', component: HvemerjegComponent },
-  { path: 'kontakt', component: KontaktComponent },
+  { path: 'Events', component: EventsComponent },
+  { path: 'Forside', component: ForsideComponent },
+  { path: 'Galleri', component: GalleriComponent },
+  { path: 'Hold', component: HoldComponent },
+  { path: 'Hvemerjeg', component: HvemerjegComponent },
+  { path: 'Kontakt', component: KontaktComponent },
 ];

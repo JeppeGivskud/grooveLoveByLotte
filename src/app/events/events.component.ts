@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { TitlePictureComponent } from '../common-controls/title-picture/title-picture.component';
 
 @Component({
   selector: 'app-events',
   standalone: true,
-  imports: [],
+  imports: [TitlePictureComponent],
   templateUrl: './events.component.html',
-  styleUrl: './events.component.scss'
+  styleUrl: './events.component.scss',
 })
-export class EventsComponent {
-
-}
+export class EventsComponent {}

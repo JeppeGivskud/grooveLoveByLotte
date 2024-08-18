@@ -1,9 +1,11 @@
+:host {
+  --margin: 50px; /* Default width */
+}
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #b300ff;
   height: 80px;
   width: 100%;
   .top {
@@ -13,7 +15,6 @@
     justify-items: center;
     align-items: center;
     background-color: #e3a7fd;
-    height: 40px;
     width: 100%;
     .instaFace {
       display: flex;
@@ -22,6 +23,18 @@
       align-items: center; // Keeps the images vertically centered
       width: 80px; // This sets the container width, consider adjusting if having more than one image
       height: 40px; // This sets the container height
+      margin-left: var(--margin);
+    }
+    .contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end; // Adjust as needed to align the links
+      align-items: center; // Keeps the links vertically centered
+      height: 40px; // This sets the container height
+      margin-right: var(--margin);
+      color: white;
+      text-decoration: none; // Removes the underline from links
+      background-color: aquamarine;
     }
   }
   .below {
@@ -33,6 +46,7 @@
     height: 40px;
     width: 100%;
     .routes {
+      margin-right: var(--margin);
       display: flex;
       flex-direction: row;
       justify-content: flex-end; // Adjust as needed to align the links
@@ -44,7 +58,7 @@
         flex-direction: column;
         justify-content: flex-start;
         height: 23px;
-        margin-right: 10px; // Adjust as needed to space the links&
+        margin-left: 20px; // Adjust as needed to space the links&
         &.selected {
           border-bottom: #fdabc9 2px solid;
           margin-bottom: -2px;
@@ -52,6 +66,7 @@
       }
     }
     .title {
+      margin-left: var(--margin);
       display: flex;
       flex-direction: row;
       justify-content: flex-start; // Adjust as needed to align the title

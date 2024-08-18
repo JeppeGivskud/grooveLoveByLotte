@@ -1,16 +1,22 @@
 <div class="container">
   <div class="top">
     <div class="instaFace">
-      <app-icon
-        [icon]="'Instagram.svg'"
-        (click)="goTo('https://www.instagram.com/groovelovebylotte/')"
-      ></app-icon>
-      <app-icon
-        [icon]="'Facebook.svg'"
-        (click)="
-          goTo('https://www.facebook.com/profile.php?id=100067958057525')
-        "
-      ></app-icon>
+      <a href="https://www.instagram.com/groovelovebylotte/">
+        <app-icon [icon]="'Instagram.svg'"></app-icon>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100067958057525">
+        <app-icon [icon]="'Facebook.svg'"></app-icon>
+      </a>
+    </div>
+    <div class="contact">
+      <a href="mailto:kontakt@groovelovebylotte.dk" class="contact">
+        <app-icon [icon]="'Mail.svg'"></app-icon>
+        <span>{{ "kontakt@groovelovebylotte.dk" }}</span>
+      </a>
+      <a href="tel:40402710" class="contact">
+        <app-icon [icon]="'iPhone.svg'"></app-icon>
+        <span>{{ "(+45) 40402710" }}</span>
+      </a>
     </div>
   </div>
   <div class="below">
@@ -21,10 +27,9 @@
       <div
         *ngFor="let route of routes"
         class="route"
-        [ngClass]="{ selected: route.selected }"
+        [ngClass]="{ selected: selected === route.route }"
       >
-        <span (click)="pressRouterLink(route.key)">{{ route.key }}</span>
-        <!-- <span *ngIf="route.selected" class="line"></span> -->
+        <span (click)="pressRouterLink(route.route)">{{ route.key }}</span>
       </div>
     </div>
   </div>
