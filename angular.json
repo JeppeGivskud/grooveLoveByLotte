@@ -11,27 +11,27 @@
         }
       },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "./src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/groove-love-by-lotte",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
+            "index": "./src/index.html",
+            "browser": "./src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets"
+                "input": "./src/assets"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["./src/styles.scss"],
             "scripts": [],
-            "server": "src/main.server.ts",
+            "server": "./src/main.server.ts",
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
@@ -85,10 +85,10 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets"
+                "input": "./src/assets"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["./src/styles.scss"],
             "scripts": []
           }
         },
