@@ -1,12 +1,31 @@
 <div class="container">
-  <div class="instaFace">
-    <app-icon
-      [icon]="'Instagram.svg'"
-      (click)="goTo('https://www.instagram.com/groovelovebylotte/')"
-    ></app-icon>
-    <app-icon
-      [icon]="'Facebook.svg'"
-      (click)="goTo('https://www.facebook.com/profile.php?id=100067958057525')"
-    ></app-icon>
+  <div class="top">
+    <div class="instaFace">
+      <app-icon
+        [icon]="'Instagram.svg'"
+        (click)="goTo('https://www.instagram.com/groovelovebylotte/')"
+      ></app-icon>
+      <app-icon
+        [icon]="'Facebook.svg'"
+        (click)="
+          goTo('https://www.facebook.com/profile.php?id=100067958057525')
+        "
+      ></app-icon>
+    </div>
+  </div>
+  <div class="below">
+    <div class="title">
+      <h1>Groove Love by Lotte</h1>
+    </div>
+    <div class="routes">
+      <div
+        *ngFor="let route of routes"
+        class="route"
+        [ngClass]="{ selected: route.selected }"
+      >
+        <span (click)="pressRouterLink(route.key)">{{ route.key }}</span>
+        <!-- <span *ngIf="route.selected" class="line"></span> -->
+      </div>
+    </div>
   </div>
 </div>
